@@ -12,5 +12,8 @@
     "low-code"
   ],
   "author": "Herbert He<Herbert.He0229@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  }
 }
