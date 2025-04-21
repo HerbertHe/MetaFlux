@@ -1,7 +1,7 @@
 import { defineConfig } from "@umijs/max";
 
 import { routes } from "./routes";
-import { proxy, ProxyEnvType } from "./proxy";
+import { proxy, type ProxyEnvType } from "./proxy";
 
 const APP_ENV = (process.env.APP_ENV || "dev") as ProxyEnvType;
 

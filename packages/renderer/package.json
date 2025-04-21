@@ -1,0 +1,14 @@
+{
+  "name": "renderer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsup src/index.tsx --watch",
+    "build": "tsup src/index.tsx"
+  },
+  "keywords": [],
+  "author": "Herbert He<Herbert.He0229@gmail.com>",
+  "license": "MIT",
+  "dependencies": {}
+}

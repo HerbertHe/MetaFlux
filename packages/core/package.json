@@ -1,0 +1,15 @@
+{
+  "name": "@metaflux/core",
+  "version": "1.0.0",
+  "description": "Core package for MetaFlux",
+  "private": false,
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsup src/index.ts --watch",
+    "build": "tsup src/index.ts"
+  },
+  "keywords": [],
+  "author": "Herbert He<Herbert.He0229@gmail.com>",
+  "license": "MIT",
+  "dependencies": {}
+}

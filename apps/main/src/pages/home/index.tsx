@@ -1,5 +1,11 @@
+import MetaFluxDrawer from "@metaflux/drawer";
+
 const Home = () => {
-  return <div>Hello World!</div>;
+  return (
+    <div>
+      <MetaFluxDrawer />
+    </div>
+  );
 };
 
 export default Home;
