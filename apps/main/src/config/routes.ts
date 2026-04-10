@@ -8,13 +8,15 @@ interface IRoute {
 
 export const routes: IRoute[] = [
   {
+    name: "Home",
     path: "/",
-    redirect: "/home",
+    component: "./home",
+    layout: false,
   },
   {
-    name: "Home",
-    path: "/home",
-    component: "./home",
+    name: "Demo",
+    path: "/demo",
+    component: "./demo",
     layout: false,
   },
 ];

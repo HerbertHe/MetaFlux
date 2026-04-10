@@ -28,4 +28,5 @@ export default defineConfig({
   routes,
   proxy: proxy[APP_ENV],
   npmClient: "pnpm",
+  tailwindcss: {},
 });
