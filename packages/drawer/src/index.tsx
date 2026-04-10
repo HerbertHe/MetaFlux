@@ -1,31 +1,16 @@
-import { DndContext } from "@dnd-kit/core";
+export { default as Canvas } from "./canvas";
+export { default as RenderExampleWidget } from "./canvas/RenderExampleWidget";
 
-/**
- * Drawer component for MetaFlux
- * @returns
- */
-const MetaFluxDrawer = () => {
-  return (
-    <div>
-      <DndContext>
-        {/* Widgets Panel */}
-        <div>
-          <header>Widgets</header>
-          <main>{/* default widgets */}</main>
-        </div>
-        {/* Canvas Panel */}
-        <div>
-          <header>Canvas</header>
-          <main>canvas</main>
-        </div>
-        {/* Properties Panel */}
-        <div>
-          <header>Properties</header>
-          <main>{/* default properties */}Properties</main>
-        </div>
-      </DndContext>
-    </div>
-  );
-};
+export { DraggableWidget, DroppableArea, SortableWidget } from "./dnd";
 
-export default MetaFluxDrawer;
+export { FormulaEditor } from "./formula";
+
+export { default as WidgetPropertiesPanel } from "./properties";
+export { default as FormFieldProperties } from "./properties/FormFieldProperties";
+
+export { default as FormRules } from "./rules";
+
+export { DrawerStoreProvider, useDrawerStore } from "./store";
+export type { DrawerState, DrawerActions, DrawerLang } from "./store";
+
+export { default as drawerI18n, DRAWER_I18N_NS } from "./i18n";

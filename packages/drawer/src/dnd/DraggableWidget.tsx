@@ -1,21 +1,19 @@
 import type { PropsWithChildren, FC } from "react";
 import { useDraggable } from "@dnd-kit/core";
-import type { IWidget } from "@metaflux/core";
+import type { IWidgetBase } from "@metaflux/core";
 
 type DraggableWidgetProps = PropsWithChildren<{
-  widget: IWidget;
+  widget: IWidgetBase;
 }>;
 
 const DraggableWidget: FC<DraggableWidgetProps> = ({ widget, children }) => {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: widget.widgetId,
+    id: widget.fieldKey,
     data: widget,
   });
 
   const style = transform
-    ? {
-        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-      }
+    ? { transform: `translate3d(${transform.x}px, ${transform.y}px, 0)` }
     : undefined;
 
   return (

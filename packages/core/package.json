@@ -1,15 +1,35 @@
 {
   "name": "@metaflux/core",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Core package for MetaFlux",
   "private": false,
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "tsup src/index.ts --watch",
-    "build": "tsup src/index.ts"
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "build": "tsup src/index.ts --format esm,cjs --dts"
   },
   "keywords": [],
   "author": "Herbert He<Herbert.He0229@gmail.com>",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "hot-formula-parser": "^4.0.0",
+    "unist-formula-ast": "*",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/hot-formula-parser": "^4.0.4"
+  }
 }

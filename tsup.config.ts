@@ -1,7 +1,6 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  format: ["esm"],
+  format: ["esm", "cjs"],
   dts: true,
-  external: ["react", "antd"],
 });

@@ -1,13 +1,14 @@
 {
   "name": "@herberthe/meta-flux",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "preview": "pnpm run build:pkgs && concurrently \"pnpm run dev:pkgs\" \"pnpm run dev:main\"",
+    "dev": "pnpm run preview",
     "dev:main": "cd apps/main && npm run dev",
     "dev:pkgs": "pnpm -r --filter=./packages/** run dev",
-    "build:pkgs": "pnpm -r --filter=./packages/** run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:pkgs": "pnpm -r --filter=./packages/** run build"
   },
   "keywords": [
     "MetaFlux",
@@ -18,13 +19,30 @@
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0",
+    "@types/pg": "^8.20.0",
     "@types/react": "18.3.1",
+    "concurrently": "^9.2.1",
     "cross-env": "^7.0.3",
-    "postcss": "^8.5.3",
-    "tsup": "^8.4.0"
+    "tsup": "^8.4.0",
+    "typescript": "^5.0.3"
   },
   "dependencies": {
     "antd": "^5.24.7",
-    "react": "18.3.1"
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "pg": "^8.20.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "18.3.1",
+      "react-dom": "18.3.1",
+      "antd": "5.24.7",
+      "@ant-design/icons": "5.6.1",
+      "typescript": "5.8.3"
+    }
   }
 }

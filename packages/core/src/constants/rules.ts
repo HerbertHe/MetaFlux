@@ -34,131 +34,66 @@ type RuleConditionMethodsType = Record<
   }[]
 >;
 
-type RuleResultMethodsType = {
+interface RuleResultMethodsTypeItem {
   label: string;
   value: ModuleRuleResultMethodEnum;
-}[];
+}
+
+type RuleResultMethodsType = RuleResultMethodsTypeItem[];
+
+export const ConditionMethodDisplayMap = ConditionMethodsDefaultLabel;
+
+export const InputRuleConditionMethods = [
+  { value: ModuleRuleConditionMethodEnum.EQ, label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.EQ] },
+  { value: ModuleRuleConditionMethodEnum.NE, label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.NE] },
+];
+
+export const NumberInputRuleConditionMethods = [
+  { value: ModuleRuleConditionMethodEnum.EQ, label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.EQ] },
+  { value: ModuleRuleConditionMethodEnum.NE, label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.NE] },
+  { value: ModuleRuleConditionMethodEnum.LT, label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.LT] },
+  { value: ModuleRuleConditionMethodEnum.GT, label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.GT] },
+  { value: ModuleRuleConditionMethodEnum.LTE, label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.LTE] },
+  { value: ModuleRuleConditionMethodEnum.GTE, label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.GTE] },
+  { value: ModuleRuleConditionMethodEnum.RANGE, label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.RANGE] },
+];
+
+export const DateRuleConditionMethods = NumberInputRuleConditionMethods;
+
+export const SelectRuleConditionMethods = [
+  { value: ModuleRuleConditionMethodEnum.EQ, label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.EQ] },
+  { value: ModuleRuleConditionMethodEnum.NE, label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.NE] },
+  { value: ModuleRuleConditionMethodEnum.IN, label: "Any of Choice" },
+];
 
 export const WidgetSupportedRuleConditionMethods: RuleConditionMethodsType = {
-  Input: [
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.EQ],
-      value: ModuleRuleConditionMethodEnum.EQ,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.NE],
-      value: ModuleRuleConditionMethodEnum.NE,
-    },
-  ],
-  NumberInput: [
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.EQ],
-      value: ModuleRuleConditionMethodEnum.EQ,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.NE],
-      value: ModuleRuleConditionMethodEnum.NE,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.LT],
-      value: ModuleRuleConditionMethodEnum.LT,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.GT],
-      value: ModuleRuleConditionMethodEnum.GT,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.LTE],
-      value: ModuleRuleConditionMethodEnum.LTE,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.GTE],
-      value: ModuleRuleConditionMethodEnum.GTE,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.RANGE],
-      value: ModuleRuleConditionMethodEnum.RANGE,
-    },
-  ],
-  Date: [
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.EQ],
-      value: ModuleRuleConditionMethodEnum.EQ,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.NE],
-      value: ModuleRuleConditionMethodEnum.NE,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.LT],
-      value: ModuleRuleConditionMethodEnum.LT,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.GT],
-      value: ModuleRuleConditionMethodEnum.GT,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.LTE],
-      value: ModuleRuleConditionMethodEnum.LTE,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.GTE],
-      value: ModuleRuleConditionMethodEnum.GTE,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.RANGE],
-      value: ModuleRuleConditionMethodEnum.RANGE,
-    },
-  ],
-  Select: [
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.EQ],
-      value: ModuleRuleConditionMethodEnum.EQ,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.NE],
-      value: ModuleRuleConditionMethodEnum.NE,
-    },
-    {
-      label: "Any of Choice",
-      value: ModuleRuleConditionMethodEnum.IN,
-    },
-  ],
-  Radio: [
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.EQ],
-      value: ModuleRuleConditionMethodEnum.EQ,
-    },
-    {
-      label: ConditionMethodsDefaultLabel[ModuleRuleConditionMethodEnum.NE],
-      value: ModuleRuleConditionMethodEnum.NE,
-    },
-    {
-      label: "Any of Choice",
-      value: ModuleRuleConditionMethodEnum.IN,
-    },
-  ],
+  Input: InputRuleConditionMethods,
+  NumberInput: NumberInputRuleConditionMethods,
+  Date: DateRuleConditionMethods,
+  Select: SelectRuleConditionMethods,
+  Radio: SelectRuleConditionMethods,
+  Checkbox: SelectRuleConditionMethods,
+  CustomRadio: SelectRuleConditionMethods,
 };
 
 export const WidgetSupportedRuleResultMethods: RuleResultMethodsType = [
-  {
-    label: ResultMethodsDefaultLabel[ModuleRuleResultMethodEnum.Hide],
-    value: ModuleRuleResultMethodEnum.Hide,
-  },
-  {
-    label: ResultMethodsDefaultLabel[ModuleRuleResultMethodEnum.ReadOnly],
-    value: ModuleRuleResultMethodEnum.ReadOnly,
-  },
-  {
-    label: ResultMethodsDefaultLabel[ModuleRuleResultMethodEnum.Writeable],
-    value: ModuleRuleResultMethodEnum.Writeable,
-  },
-  {
-    label: ResultMethodsDefaultLabel[ModuleRuleResultMethodEnum.SetValue],
-    value: ModuleRuleResultMethodEnum.SetValue,
-  },
-  {
-    label: ResultMethodsDefaultLabel[ModuleRuleResultMethodEnum.SetOptions],
-    value: ModuleRuleResultMethodEnum.SetOptions,
-  },
+  { label: ResultMethodsDefaultLabel[ModuleRuleResultMethodEnum.Hide], value: ModuleRuleResultMethodEnum.Hide },
+  { label: ResultMethodsDefaultLabel[ModuleRuleResultMethodEnum.ReadOnly], value: ModuleRuleResultMethodEnum.ReadOnly },
+  { label: ResultMethodsDefaultLabel[ModuleRuleResultMethodEnum.Writeable], value: ModuleRuleResultMethodEnum.Writeable },
+  { label: ResultMethodsDefaultLabel[ModuleRuleResultMethodEnum.SetValue], value: ModuleRuleResultMethodEnum.SetValue },
+  { label: ResultMethodsDefaultLabel[ModuleRuleResultMethodEnum.SetOptions], value: ModuleRuleResultMethodEnum.SetOptions },
 ];
+
+export function getConditionMethodsForWidget(widgetType: SupportedWidgetType) {
+  return WidgetSupportedRuleConditionMethods[widgetType] || [];
+}
+
+export function getResultMethodsForWidget(widgetType: SupportedWidgetType) {
+  const hasOptions: SupportedWidgetType[] = ["Select", "Radio", "Checkbox", "CustomRadio"];
+  if (hasOptions.includes(widgetType)) {
+    return WidgetSupportedRuleResultMethods;
+  }
+  return WidgetSupportedRuleResultMethods.filter(
+    (m) => m.value !== ModuleRuleResultMethodEnum.SetOptions,
+  );
+}

@@ -6,6 +6,8 @@ export const WidgetDisplayNames: Record<SupportedWidgetType, string> = {
   Date: "Date",
   Select: "Select",
   Radio: "Radio",
+  Checkbox: "Checkbox",
+  CustomRadio: "Custom Radio",
 };
 
 export const SupportedWidgetInteractions: SupportedWidgetType[] = [
@@ -14,10 +16,13 @@ export const SupportedWidgetInteractions: SupportedWidgetType[] = [
   "Date",
   "Select",
   "Radio",
+  "Checkbox",
+  "CustomRadio",
 ];
 
 export const SupportedWidgetInteractionsWithOptions: SupportedWidgetType[] = [
   "Select",
   "Radio",
+  "Checkbox",
+  "CustomRadio",
 ];
-

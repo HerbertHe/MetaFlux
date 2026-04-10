@@ -1,0 +1,54 @@
+.panel-container {
+  display: grid;
+  grid-template-columns: 220px 1fr 330px;
+  gap: 25px;
+  height: 100%;
+
+  .widgets-panel,
+  .form-design-panel,
+  .widget-properties-panel {
+    height: 100%;
+    border-radius: 5px;
+    padding-right: 10px;
+  }
+
+  .widgets-panel {
+    position: sticky;
+    top: 0;
+
+    & > main {
+      display: grid;
+      gap: 10px;
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .form-design-panel {
+    display: flex;
+    flex-direction: column;
+
+    & > main {
+      flex: 1;
+      border: 1px dashed #d6e4ff;
+      border-radius: 5px;
+
+      & .item {
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+        user-select: none;
+      }
+
+      & .item {
+        border: transparent dashed 1px;
+      }
+
+      & .item:hover {
+        background-color: #bfbfbf;
+        border: #bfbfbf dashed 1px;
+        cursor: pointer;
+      }
+    }
+  }
+}

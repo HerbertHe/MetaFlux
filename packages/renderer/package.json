@@ -1,14 +1,45 @@
 {
-  "name": "renderer",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@metaflux/renderer",
+  "version": "0.1.0",
+  "description": "Runtime renderer package for MetaFlux",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles": "./dist/styles.css"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "tsup src/index.tsx --watch",
-    "build": "tsup src/index.tsx"
+    "dev": "rollup -c rollup.config.mjs --watch",
+    "build": "rollup -c rollup.config.mjs"
   },
   "keywords": [],
   "author": "Herbert He<Herbert.He0229@gmail.com>",
   "license": "MIT",
-  "dependencies": {}
+  "peerDependencies": {
+    "antd-mobile": ">=5.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "@metaflux/core": "workspace:*",
+    "dayjs": "^1.11.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "less": "^4.6.4",
+    "rc-field-form": "^2.7.1",
+    "rollup": "^4.60.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.8.1"
+  }
 }
